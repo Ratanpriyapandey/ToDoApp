@@ -16,10 +16,12 @@ export class TodoService {
                 {
                     id: 1,
                     title: 'ratan.',
+                    salution: 'Mr.',
                     taskName: 'Mark',
                     description: 'Jacob',
-                    dateTime:'',
-                    priority:'High'
+                    lastName: 'Otto',
+                    phone: '1234567890',
+                    email: 'mark_otto@gmail.com'
                 },
                 
             ];

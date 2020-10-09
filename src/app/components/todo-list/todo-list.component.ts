@@ -21,7 +21,7 @@ export class TodoListComponent implements OnInit {
   }
   
   onClickEditTodoDetail(id) {
-      console.log(id);
+      
       this.router.navigate(['/todo-details'], {queryParams: {id: id}});
   }
   

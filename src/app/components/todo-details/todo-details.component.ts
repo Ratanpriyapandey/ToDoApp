@@ -32,12 +32,11 @@ export class TodoDetailsComponent implements OnInit {
   }
   
   getTodoDetailById(id) {
-    this.todoDetail = this.todoService.getTodoById(parseInt(id));
-    console.log(this.todoDetail);  
+    this.todoDetail = this.todoService.getTodoById(parseInt(id)); 
   }
   
   onTodoSubmitForm(form) {
-    console.log(form);
+
     if(form.valid) {
         this.todoService.updateTodoById(this.todoDetail);
         this.router.navigate(['/todo-list']);

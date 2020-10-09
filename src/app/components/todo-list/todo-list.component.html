@@ -1,7 +1,6 @@
 <div class="col-sm-12 pt-5 text-left">
-    <div class="col-md-12">
-        <button class="btn" style="font-size: 40px;margin-bottom:40px;margin-left:-14px" (click)="onClickAddTodo()"><i class="fa fa-plus-circle"></i></button>
-    </div>
+        <button class="btn" (click)="onClickAddTodo()"><i style="font-size: 40px;"  class="fa fa-plus-circle"></i></button>
+    
 </div>
 <div class="container">
     <div class="box" *ngFor="let todo of todos">
@@ -12,8 +11,8 @@
 
         </div>
         <div class="col-md-12">
-            <button class="btn" (click)="onClickEditTodoDetail(todo.id)"><i class="fa fa-pencil"></i></button>
-            <button class="btn" (click)="onClickTodoDelete(todo.id)"><i class="fa fa-trash"></i></button>
+            <button class="btn btn1" (click)="onClickEditTodoDetail(todo.id)"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn1" (click)="onClickTodoDelete(todo.id)"><i class="fa fa-trash"></i></button>
         </div>
     </div>
 
