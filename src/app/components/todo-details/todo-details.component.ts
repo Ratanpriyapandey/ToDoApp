@@ -27,6 +27,7 @@ export class TodoDetailsComponent implements OnInit {
                 this.todoId = null;
                 this.todoDetail['id'] = 0;
                 this.mode = 'Add';   
+                this.todoDetail.priority="Normal";
           }
         }); 
   }
