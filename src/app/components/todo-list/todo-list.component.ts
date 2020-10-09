@@ -23,10 +23,11 @@ export class TodoListComponent implements OnInit {
   onClickEditTodoDetail(id) {
       
       this.router.navigate(['/todo-details'], {queryParams: {id: id}});
+      //queryParams is observable
   }
   
   onClickAddTodo() {
-      this.router.navigate(['/todo-details']);
+      this.router.navigate(['../todo-details']);
   }
   
   onClickTodoDelete(id) {
