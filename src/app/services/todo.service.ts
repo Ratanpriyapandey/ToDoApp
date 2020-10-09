@@ -15,7 +15,7 @@ export class TodoService {
             var todoArrayData = [
                 {
                     id: 1,
-                    taskName: 'Dummy Task',
+                    taskName: 'DemoTask',
                     description: 'Task is based on my interest',
                     dateTime: '2020-10-22T14:02',
                     priority:'Normal'
