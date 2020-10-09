@@ -27,7 +27,7 @@ export class TodoListComponent implements OnInit {
   }
   
   onClickAddTodo() {
-      this.router.navigate(['../todo-details']);
+      this.router.navigate(['/todo-details']);
   }
   
   onClickTodoDelete(id) {
