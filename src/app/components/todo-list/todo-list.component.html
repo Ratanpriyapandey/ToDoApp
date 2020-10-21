@@ -2,18 +2,12 @@
         <button class="btn" (click)="onClickAddTodo()"><i style="font-size: 40px;"  class="fa fa-plus-circle"></i></button>
     
 </div>
-<div class="container">
+<div class="container-fluid">
     <div class="box" *ngFor="let todo of todos">
-        <div class="inner">
-            <span style="padding-left: 10px;padding-right: 10px;border-radius: 10px;" [ngStyle]="{'background': getColor(todo)}">{{todo.taskName.substring(0,9)}}</span>
-            <p> {{todo.description.substring(0,12)}}....</p>
-            <p style="font-size: 12px;"> {{todo.dateTime}}</p>
-
-        </div>
-        <div class="col-md-12">
-            <button class="btn" (click)="onClickEditTodoDetail(todo.id)"><i class="fa fa-pencil"></i></button>
-            <button class="btn" (click)="onClickTodoDelete(todo.id)"><i class="fa fa-trash"></i></button>
-        </div>
+            <div class="inner" (click)="onClickEditTodoDetail(todo.id)">
+                <div class="task" [ngStyle]="{'background': getColor(todo)}">{{todo.taskName.substring(0,9)}}</div>
+                <div class="desc"><p> {{todo.description.substring(0,25)}}</p></div>
+                <div class="dateTime"> {{todo.dateTime}}</div>
     </div>
-
+    </div>
 </div>

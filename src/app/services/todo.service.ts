@@ -15,10 +15,11 @@ export class TodoService {
             var todoArrayData = [
                 {
                     id: 1,
-                    taskName: 'DemoTask',
-                    description: 'Task is based on my interest',
-                    dateTime: '2020-10-22T14:02',
-                    priority:'Normal'
+                    taskName: 'PRD',
+                    description: 'Painting a illustration',
+                    project:'PRD Rebrand 2018',
+                    dateTime: '2020-10-22 pm9:02',
+                    priority:'High'
                 },
                 
             ];

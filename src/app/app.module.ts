@@ -11,12 +11,14 @@ import { TodoDetailsComponent } from './components/todo-details/todo-details.com
 
 import {HttpClientModule} from '@angular/common/http';
 import { TodoService } from './services/todo.service';
+import { TodoAddComponent } from './components/todo-add/todo-add.component';
 @NgModule({
   declarations: [
     AppComponent,
     TopHeaderComponent,
     TodoListComponent,
-    TodoDetailsComponent
+    TodoDetailsComponent,
+    TodoAddComponent
     
   ],
   imports: [

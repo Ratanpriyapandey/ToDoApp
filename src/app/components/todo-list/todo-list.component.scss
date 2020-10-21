@@ -1,25 +1,45 @@
 .box {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 190px;
     background: white;
-    display: inline-block;
-    position: relative;
+    display: inline-flex;
     margin: 20px;
-    box-shadow: 10px 10px 10px 10px whitesmoke;
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    position: relative;
 }
+.box:hover {
+    box-shadow: 0 0 11px blueviolet ;
+  }
+.inner {  
 
-.inner {
-    height: 110px;
-    margin-left: 6%;
-    margin-top: 6%;
+    margin-left: 20px;
+    margin-top: 9px;
 }
+.desc
+{
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    
+}
+.task
+{
+    display: inline-block;
+    padding:6px;
+    color: white;
+    border-radius: 4px;  
+    font-weight: 500;
 
+}
+.dateTime
+
+{  margin-top: 27px;
+    font-size: 12px;
+    position: fixed;
+}
 p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.fa {
-    display: block;  
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
+    margin-top: 10px;
+    height: 70px;
+    word-break: break-word;
 }

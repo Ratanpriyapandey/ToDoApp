@@ -1,38 +1,37 @@
 <div class="panel panel-default">
     <div class="col-sm-12 pt-5">
         <div class="col-md-12">
+            <button type="button" (click)="onClickCancel()" class="btn btn-primary">Back</button>
             <form id="todoForm" #todoForm="ngForm" (ngSubmit)="onTodoSubmitForm(todoForm);" novalidat>
+                
                 <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">{{mode}} Todo</legend>
+                    <legend class="scheduler-border">{{todoDetail.taskName }}</legend>
+                    <hr>
                     <div class="form-group row">
-                        <label for="taskName" class="col-md-2 col-form-label">Task Name</label>
+                        <label for="description" class="col-md-2 col-form-label"><i class="fa fa-list-alt"></i>  Description</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" #taskName="ngModel" name="taskName" [(ngModel)]="todoDetail.taskName" placeholder="Task Name" required>
-                            <div [hidden]="taskName.valid || (taskName.pristine && !todoForm.submitted)" class="text-danger">
-                                Task name is required.
-                            </div>
+                            <textarea class="form-control" #description="ngModel" name="description" [(ngModel)]="todoDetail.description" placeholder="Description" ></textarea>      
                         </div>
                     </div>
+                    <hr>
                     <div class="form-group row">
-                        <label for="description" class="col-md-2 col-form-label">Description</label>
+                        <label for="project" class="col-md-2 col-form-label"><i class="fa fa-folder-open"></i>   Project</label>
                         <div class="col-md-5">
-                            <textarea class="form-control" #description="ngModel" name="description" [(ngModel)]="todoDetail.description" placeholder="Description" required></textarea>
-                            <div [hidden]="description.valid || (description.pristine && !todoForm.submitted)" class="text-danger">
-                                Description is required.
-                            </div>
+                            <input type="text" class="form-control" #project="ngModel" name="project" [(ngModel)]="todoDetail.project" placeholder="project" >
+                           
                         </div>
-                    </div>
+                    </div> 
+                     <hr>
                     <div class="form-group row">
-                        <label for="dateTime" class="col-md-2 col-form-label">Due Date</label>
-                        <div class="col-md-5">
+                        <label for="dateTime" class="col-md-2 col-form-label"><i class="fa fa-hourglass"></i>   Due Date</label>
+                        <div class="col-md-auto">
                             <input type="datetime-local" class="form-control" #dateTime="ngModel" name="dateTime" [(ngModel)]="todoDetail.dateTime" placeholder="Due Date" required>
-                            <div [hidden]="dateTime.valid || (dateTime.pristine && !todoForm.submitted)" class="text-danger">
-                                Due date is missing
-                            </div>
+                            
                         </div>
                     </div>
+                    <hr>
                     <div class="form-group row">
-                        <label for="priority" class="col-md-2 col-form-label">Priority</label>
+                        <label for="priority" class="col-md-2 col-form-label"><i class="fa fa-life-ring"></i>  Priority</label>
                         <div class="col-md-5">
                             <label class="radio-inline mycontainer"> <input  type="radio"  #priority="ngModel" name="priority"  [(ngModel)]="todoDetail.priority" value="Normal">Normal<span class="checkmarkGreen"></span>
                             </label>
@@ -46,7 +45,8 @@
                     <div class="form-group row">
                         <div class="col-md-7 text-right">
                             <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <button type="button" (click)="onClickCancel()" class="btn btn-primary">Cancel</button>
+                            <button class="button" (click)="onClickTodoDelete(todoDetail.id)" class="btn btn-primary">Finish</button>
+                            
                         </div>
                     </div>
                 </fieldset>

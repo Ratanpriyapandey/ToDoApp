@@ -27,21 +27,18 @@ export class TodoListComponent implements OnInit {
   }
   
   onClickAddTodo() {
-      this.router.navigate(['/todo-details']);
+      this.router.navigate(['/todo-add']);
   }
   
-  onClickTodoDelete(id) {
-      this.todoService.deleteTodoDetail(id);
-      this.loadAllTodoList(); 
-  }
+ 
   getColor(todo) {
     if(todo.priority == "Normal"){
-      return 'lawngreen';
+      return 'green';
       
     }
     else if(todo.priority == "Medium"){
-        return 'yellow';
+        return 'blue';
       }
-    return 'palevioletred'
+    return 'red'
 }
 }
