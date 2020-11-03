@@ -1,56 +1,59 @@
-<div class="panel panel-default">
-    <div class="col-sm-12 pt-5">
-        <div class="col-md-12">
-            <button type="button" (click)="onClickCancel()" class="btn btn-primary">Back</button>
-            <form id="todoForm" #todoForm="ngForm" (ngSubmit)="onTodoSubmitForm(todoForm);" novalidat>
-                
-                <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">{{todoDetail.taskName }}</legend>
-                    <hr>
-                    <div class="form-group row">
-                        <label for="description" class="col-md-2 col-form-label"><i class="fa fa-list-alt"></i>  Description</label>
-                        <div class="col-md-5">
-                            <textarea class="form-control" #description="ngModel" name="description" [(ngModel)]="todoDetail.description" placeholder="Description" ></textarea>      
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <label for="project" class="col-md-2 col-form-label"><i class="fa fa-folder-open"></i>   Project</label>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" #project="ngModel" name="project" [(ngModel)]="todoDetail.project" placeholder="project" >
-                           
-                        </div>
-                    </div> 
-                     <hr>
-                    <div class="form-group row">
-                        <label for="dateTime" class="col-md-2 col-form-label"><i class="fa fa-hourglass"></i>   Due Date</label>
-                        <div class="col-md-auto">
-                            <input type="datetime-local" class="form-control" #dateTime="ngModel" name="dateTime" [(ngModel)]="todoDetail.dateTime" placeholder="Due Date" required>
-                            
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <label for="priority" class="col-md-2 col-form-label"><i class="fa fa-life-ring"></i>  Priority</label>
-                        <div class="col-md-5">
-                            <label class="radio-inline mycontainer"> <input  type="radio"  #priority="ngModel" name="priority"  [(ngModel)]="todoDetail.priority" value="Normal">Normal<span class="checkmarkGreen"></span>
-                            </label>
-                            <label class="radio-inline mycontainer"><input  type="radio"  #priority="ngModel" name="priority"  [(ngModel)]="todoDetail.priority" value="Medium">Medium<span class="checkmarkYellow"></span>
-                            </label>
-                            <label class="radio-inline mycontainer"><input  type="radio"  #priority="ngModel" name="priority"  [(ngModel)]="todoDetail.priority" value="High">High<span class="checkmarkRed"></span>
-                              </label>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-md-7 text-right">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <button class="button" (click)="onClickTodoDelete(todoDetail.id)" class="btn btn-primary">Finish</button>
-                            
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
+<div class="col-md-6 col-md-offset-2">
+    
+    <form id="todoForm" #todoForm="ngForm" class="myform" (ngSubmit)="onTodoSubmitForm(todoForm);" novalidat>
+        <legend class="">{{todoDetail.taskName}}</legend>
+        <div class="form-group row">
+            <label for="taskName" class="col-xs-3"><i class="fa fa-list-alt"></i>
+                Task Name</label>
+            <div class="col-md-3">
+                <input class="form-control" #taskName="ngModel" name="taskName" [(ngModel)]="todoDetail.taskName"
+                    placeholder="taskName">
+            </div>
         </div>
-    </div>
+        <hr>
+        <div class="form-group row">
+            <label for="description" class="col-xs-3"><i class="fa fa-list-alt"></i>
+                Description</label>
+            <div class="col-md-4">
+                <textarea class="form-control" #description="ngModel" name="description"
+                    [(ngModel)]="todoDetail.description" placeholder="Description"></textarea>
+            </div>
+        </div>
+
+        <hr>
+        <div class="form-group row">
+            <label for="dateTime" class="col-xs-3"><i class="fa fa-calendar input-prefix"></i>
+                Due Date</label>
+            <div class="col-md-4">
+                <input type="date" class="form-control" #dateTime="ngModel" name="dateTime"
+                    [(ngModel)]="todoDetail.dateTime" placeholder="Due Date" required>
+
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label for="priority" class="col-xs-3"><i class="fa fa-life-ring"></i>
+                Priority</label>
+            <div class="col-md-5">
+                <label class="radio-inline mr-2"> <input type="radio" #priority="ngModel" name="priority"
+                        [(ngModel)]="todoDetail.priority" value="Normal" checked>Normal
+                </label>
+                <label class="radio-inline mr-2"><input type="radio" #priority="ngModel" name="priority"
+                        [(ngModel)]="todoDetail.priority" value="Medium">Medium
+                </label>
+                <label class="radio-inline mr-2 "><input type="radio" #priority="ngModel" name="priority"
+                        [(ngModel)]="todoDetail.priority" value="High">High
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-7 text-right">
+                <button type="submit" class="btn btn-primary mr-2">Save</button>
+                <button type="button" (click)="onClickCancel()" class="btn btn-primary mr-2">Cancel</button>
+                <button class="button" (click)="onClickTodoDelete(todoDetail.id)"
+                class="btn btn-primary mr-2">Delete</button>
+            </div>
+        </div>
+    </form>
 </div>

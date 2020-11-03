@@ -1,13 +1,22 @@
-<div class="col-sm-12 pt-5 text-left">
-        <button class="btn" (click)="onClickAddTodo()"><i style="font-size: 40px;"  class="fa fa-plus-circle"></i></button>
-    
-</div>
-<div class="container-fluid">
-    <div class="box" *ngFor="let todo of todos">
-            <div class="inner" (click)="onClickEditTodoDetail(todo.id)">
-                <div class="task" [ngStyle]="{'background': getColor(todo)}">{{todo.taskName.substring(0,9)}}</div>
-                <div class="desc"><p> {{todo.description.substring(0,25)}}</p></div>
-                <div class="dateTime"> {{todo.dateTime}}</div>
+<div class="container">
+    <div class="row text-center">
+        <button class="btn" (click)="onClickAddTodo()"><i style="font-size: 40px;"
+                class="fa fa-plus-circle"></i></button>
+
     </div>
+    <div class="row">
+        <div class="block col-xs-2" *ngFor="let todo of todos" [ngStyle]="{'background': getColor(todo),'text-decoration':doSelect(todo)}" >
+            <div class="inner" >
+                    <div class="name1" (click)=onClickTodoStatusUpdate(todo)  >
+                        <input id="name1" name="name1" type="checkbox"  [(ngModel)]='todo.status'>
+                        <span> {{todo.taskName.substring(0,9)}}</span>
+                    </div>   
+                    <div (click)="onClickEditTodoDetail(todo.id)"> 
+                        <p> {{todo.description.substring(0,15)}} </p>
+                       <p> {{todo.dateTime}}      </p>
+                    </div>
+                       
+            </div>
+        </div>
     </div>
 </div>

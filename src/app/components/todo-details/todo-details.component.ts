@@ -39,6 +39,7 @@ export class TodoDetailsComponent implements OnInit {
 
     if(form.valid) {
         this.todoService.updateTodoById(this.todoDetail);
+        this.todoDetail.status=false;
         this.router.navigate(['/todo-list']);
     } else {
     

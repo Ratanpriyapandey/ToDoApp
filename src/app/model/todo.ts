@@ -4,7 +4,7 @@ export class Todo {
         public taskName: string,
         public description: string,
         public dateTime: string,
-        public project: string,
+        public status: boolean,
         public priority: string     
     ) { }
 }

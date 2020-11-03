@@ -15,11 +15,35 @@ export class TodoService {
             var todoArrayData = [
                 {
                     id: 1,
-                    taskName: 'PRD',
+                    taskName: 'PRD1',
                     description: 'Painting a illustration',
-                    project:'PRD Rebrand 2018',
-                    dateTime: '2020-10-22 pm9:02',
-                    priority:'High'
+                    dateTime: '2020-10-22',
+                    priority:'High',
+                    status:true
+                },
+                {
+                    id: 2,
+                    taskName: 'PRD2',
+                    description: 'Painting a illustration',
+                    dateTime: '2020-10-22 ',
+                    priority:'Medium',
+                    status:false
+                },
+                {
+                    id: 3,
+                    taskName: 'PRD3',
+                    description: 'Painting a illustration',
+                    dateTime: '2020-10-22 ',
+                    priority:'Normal',
+                    status:true
+                },
+                {
+                    id:4,
+                    taskName: 'PRD4',
+                    description: 'Painting a illustration',
+                    dateTime: '2020-10-22 ',
+                    priority:'High',
+                    status:false
                 },
                 
             ];
